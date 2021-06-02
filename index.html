@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Web Accessibility</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
+
+<script type="text/javascript" src="scripts/shCore.js"></script>
+<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="css/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="css/shThemeDefault.css"/>
+<script type="text/javascript">
+    SyntaxHighlighter.all();
+</script>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="navWrap">
+        <h1>웹접근성 <span>(web accessibility)</span></h1>
+        <ul class="nav" id="nav">
+            <li><a href="#accessibility">웹 접근성이란</a></li>
+            <li><a href="#lang">기본언어 명시</a></li>
+            <li><a href="#validator">W3C 웹 표준 준수</a></li>
+            <li><a href="#meanning">의미에 맞는 마크업 및 동작</a></li>
+            <li><a href="#img">img태그</a></li>
+            <li><a href="#IR">IR기법</a></li>
+            <li><a href="#TITLE">title태그</a></li>
+            <li><a href="#SKIP">Skip Navigation 제공</a></li>
+            <li><a href="#H_TAG">h1~h6 태그</a></li>
+            <li><a href="#TABLE">table 태그</a></li>
+            <li><a href="#FORM">form 태그</a></li>
+            <li><a href="#INPUT">input 태그</a></li>
+            <li><a href="#SELECT">select 태그</a></li>
+            <li><a href="#color">칼라구분</a></li>
+            <li><a href="#video">동영상</a></li>
+            <li><a href="#autoplay">자동재생</a></li>
+            <li><a href="#twinkle">광과민성발작 예방</a></li>
+            <li><a href="#whitespace">콘텐츠 간 여백 및 구분</a></li>
+            <li><a href="#wax">평가도구</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <dl class="list">
+            <dt id="accessibility">웹 접근성 이란</dt>
+            <dd>
+                <p>팀 버너스 리 (웹 창시자)는 <strong><span class="red">웹이란 장애에 구애없이 모든 사람들이 손쉽게 정보를 공유할 수 있는 공간</span></strong> 이라고 정의 하였다.</p>
+                <p>여기서, 접근성을 장애인에 국한된 문제라고 이해하면 안된다. <br/> 비록 접근성 준수가 장애인에게 가장 혜택이 많이 돌아가는 것은 사실이지만, 접근성이란 <span class="underline">장애인뿐만 아니라 모든 사람이 정보통신 기기나 서비스를 손쉽게 활용 할 수 있도록 말하는 것</span>이다.</p>
+            </dd>
+            <dt id="lang">기본언어 명시</dt>
+            <dd>
+                <p class="dot">웹 페이지의 기본언어를 정확히 명시해야한다. (html의 lang속성 제공 및 ISO 표준언어정의 확인)</p>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/lang.png" alt="lang속성 제공이미지">
+                    </div>
+                </div>
+            </dd>
+            <dt id="validator">W3C 웹 표준 준수</dt>
+            <dd>
+                <p class="dot">W3C 권고사항을 기준으로 하여 웹 표준을 준수한다.</p>
+                    <div class="cmt">
+                        <em class="box">W3C 마크업 검증사이트</em> <a href="https://validator.kldp.org/">https://validator.kldp.org/</a>
+                    </div>
+            </dd>
+            <dt id="meanning">의미에 맞는 마크업 및 동작</dt>
+            <dd>
+                <p class="dot">마크업이 의미에 맞게 작성되어야 한다.</p>
+                    <div class="cmt">
+                            <em class="box">시맨틱 마크업</em> 컴퓨터가 웹 정보자원의 의미를 이해할 수 있도록 문서의 논리적인 구조를 묘사하는 것이다. 장점으로는 접근성, 코드가독성, 코드와 데이터의 재사용이 높아지는 것을 들수 있다. <br/>
+                            <span class="txt_i91">시맨틱마크업 태그예제 : &lt;header&gt; &lt;nav&gt; &lt;section&gt; &lt;article&gt; &lt;aside&gt; &lt;time&gt; &lt;figure&gt; &lt;address&gt; &lt;footer&gt;...</span>
+                    </div>
+                <p class="dot"><span class="underline">모든 기능은 키보드로 사용이 가능하여야 한다. 포커스 이동 뿐만 아니라 선택을 할 경우 엔터나 스페이스바로 동작이 가능해야한다. * 알림창(alert) 또한 키보드로 사용이 가능하여야 한다.</span> </p>
+                <p class="dot">클릭이 되어야 하는 요소는 링크(&lt;a&gt;나 &lt;button&gt;으로 마크업 되어야 하며, 여러개 중에 하나를 선택해야하는 ul의 경우 &lt;select&gt;나 &lt;input type="radio"&gt;)로 마크업 해야한다. - &lt;li&gt;에 css / text-decoration : underline 및 cursor:pointer 으로 하면 키보드로 동작기능이 안된다.</p>
+                <p class="dot">탭 메뉴에서 탭 포커스 시 탭 내용이 선택될수 있어야한다. </p>
+                <p class="dot"> 이동시 포커스가 순서에 맞게 이동되지만 순서가 꼭 변경되야 할 경우 <span class="underline">tabindex속성</span>을 사용하여 순서를 지정한다.</p>
+                <p class="dot">tabindex는 컴퓨터의 논리적인 순서를 억지로 바꾸는 것이기 때문에 최대한 사용 하지 않는것이 좋다.</p>
+                <div class="exam">
+                    <pre class="brush:html;">
+                         <ul>
+                            <li><a href="#">내용1</a></li>
+                            <li><a href="#">내용2</a></li>
+                            <li><a href="#">내용3</a></li>
+                            <li><a href="#">내용4</a></li>
+                            <li><a href="#">내용5</a></li>
+                        </ul>
+                        <a href="#" tabindex="1">먼저 포커스가 되어야할 곳</a>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <ul>
+                            <li><a href="#">내용1</a></li>
+                            <li><a href="#">내용2</a></li>
+                            <li><a href="#">내용3</a></li>
+                            <li><a href="#">내용4</a></li>
+                            <li><a href="#">내용5</a></li>
+                        </ul>
+                        <a href="#" tabindex="1">먼저 포커스가 되어야할 곳</a>
+                    </div>
+                </div>
+            </dd>
+            <dt id="img">img태그</dt>
+            <dd>
+                <p class="dot">img태그가 들어가면 그 의미에 맞는 alt값을 넣어준다</p>
+                <p class="dot">단순히 &#39;그림&#39; , &#39;사진&#39; 과 같은 모호한 표현을 삼간다. </p>
+                <p class="dot">더보기 같은 경우의 이미지는 자세한 의미가 들어가야 한다. (공지사항 더보기 , 사진 더보기 ..) </p>
+                <p class="dot">의미 없는 이미지에는 빈 alt 속성이 제공 되어야 한다. </p>
+                <p class="dot">Alt값에 들어가는 내용이 많을 경우 longdesc 속성 ( longdesc=“설명경로.html” )을 이용해도 된다. * 반드시 alt속성도 제공 해야함</p>
+                <div class="cmt">
+                    <em class="box">IR기법(Image Replacement)</em> - <strong>이미지 대체기법</strong> IR기법으로 대체할수 있다.
+                </div>
+                
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <img src="http://www.cntt.co.kr/renewal/resources/images/main/img_banner_m_161018.jpg" alt="전화성의 어드벤처 8기 모집 2016 엑셀러레이터 연계지원사업 (충청권)"> <!-- 이미지에 들어가있는 모든 글자삽입 -->
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <img src="http://www.cntt.co.kr/renewal/resources/images/main/img_banner_m_161018.jpg" alt="전화성의 어드벤처 8기 모집 2016 엑셀러레이터 연계지원사업 (충청권)" width="320">
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot"><span class="underline">조직도이미지</span>는 각 항목이 대체 텍스트 뿐만아니라 각 항목 간의 관계가 표현되어야 한다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <img src="imgs/area.png" alt="조직도">
+                        <span class="blind">전화성 CEO를 기준으로 CMO,COO,CFO가 있으며...</span>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/area.png" alt="조직도">
+                        <span class="blind">전화성 CEO를 기준으로 CMO,COO,CFO가 있으며...</span>
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot">차트, 다이어그램은 전달하고자 하는 대체 텍스트를 제공하며 데이터가 많을경우에도 모든 내용을 포함하고 있어야한다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <img src="imgs/chart.png" alt="ABCD의 결과는 A 60% B 25% C 10% D 5%">
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/chart.png" alt="ABCD의 결과는 A">
+                    </div>
+                </div>
+            </dd>
+            <dt id="IR">IR기법</dt>
+            <dd>
+                <p class="dot">배경 이미지의 의미가 사용자에게 전달되어야 하는 콘텐츠는 그 의미가 보조 기술로 전달되도록 대체 텍스트를 제공해야 한다. </p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <p><a href="#" class="btn_facebook">페이스북으로 이동</a></p>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <pre class="brush: css;">
+                        /* bg 로 이미지 삽입*/
+                        .btn_facebook{display:inlnie-block;width:20px;height:20px;text-indent:-999em;font-size:0;backgroung:url(/images/btn_facebook.png) no-repeat;}
+                    </pre>
+                </div>
+            </dd>
+            <dt id="TITLE">title 태그</dt>
+            <dd>
+                <p class="dot">페이지에 제목이라 할 수 있는 &lt;title&gt;태그에는 간략하게 페이지 별로 페이지의 대한 정보(제목)만을 입력한다.</p>
+                <p class="dot">무의미한 기호나 텍스트는 넣지 않는다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <title>공지사항 :: 씨엔티테크</title>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/title.png" alt="타이틀 예제 이미지">
+                    </div>
+                </div>
+            </dd>
+            <dt id="SKIP">Skip Navigation 제공</dt>
+            <dd>
+                <p class="dot">장애인을 위해 리더기가 내용을 건너 뛸 수 있게 skip navigation을 제공한다.</p>
+                <p class="dot">skip navigation은 장애인을 위한 내용이기에 화면상에 보이지 않게 처리해도 무방하다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <ul class="skip_navi">
+                            <li><a href="#gnb">상위메뉴</a></li>
+                            <li><a href="#lnb">하위메뉴</a></li>
+                            <li><a href="#contents">본문</a></li>
+                            <li><a href="#footer">회사정보</a></li>
+                            <li><a href="#quick">퀵메뉴</a></li>
+                        </ul>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <pre class="brush: css;">
+                        /* 화면상에 안보이게 처리 후 focus로 이동 가능하게 한다.*/
+                        .skip_navi {position: relative;}
+                        .skip_navi a {color: #fff;display: block;position: absolute;top:-50px; left:0;width: 200px;height:20px;background: #000;text-align: center;}
+                        .skip_navi a:focus {top:0;}
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/skip_1.png" alt="스킵메뉴 상위">
+                        <img src="imgs/skip_2.png" alt="스킵메뉴 하위">
+                        <img src="imgs/skip_3.png" alt="스킵메뉴 본문">
+                        <img src="imgs/skip_4.png" alt="스킵메뉴 회사정보">
+                        <img src="imgs/skip_5.png" alt="스킵메뉴 퀵메뉴">
+                    </div>
+                    <p class="figcaption">초기화면에서 focus 이동시 차례로 노출된다.</p>
+                </div>
+            </dd>
+            <dt id="H_TAG">&lt;h1&gt;~&lt;h6&gt; 태그</dt>
+            <dd>
+                <p class="dot">웹 페이지의 내용을 대표하는 제목 및 주요 컨텐츠 블록의 제목을 &lt;h1&gt;~&lt;h6&gt; 으로 제공한다.</p>
+                <div class="exam">
+                    <pre class="brush:html;">
+                        <h1>logo</h1>
+                        <h2>gnb 메뉴</h2>
+                        <ul>
+                            <li><a href="#">menu_1</a></li>
+                            <li><a href="#">menu_2</a></li>
+                            <li><a href="#">menu_3</a></li>
+                            <li><a href="#">menu_4</a></li>
+                            <li><a href="#">menu_5</a></li>
+                        </ul>
+                        <h3>lnb 메뉴</h3>
+                    </pre>
+                </div>
+            </dd>
+            <dt id="TABLE">table 태그</dt>
+            <dd>
+                <p class="dot"> Table 태그 안에는 &lt;caption&gt;태그로 테이블의 제목값을 반드시 넣어준다.</p>
+                <p class="dot"> &lt;thead&gt;나 &lt;tbody&gt;로 나눠서 의미에 맞게 사용하고 &lt;tfoot&gt;은 바닥글이 있을때만 사용한다. 테이블이 길 경우 리더기가 얼마나 오래 읽어야 할지 모르는 불편함을 덜기 위해 작성순서를 <span class="underline">thead – tfoot – tboody</span> 순으로 한다</p>
+                <p class="dot"> &lt;th&gt; 에는 &lt;scope&gt; 속성을 넣거나 id 값을 지정하여 &lt;td&gt;에 &lt;headers&gt; 속성으로 연결한다.</p>
+                <p class="dot"> &lt;th&gt;에 &lt;abbr&gt;속성을 이용하여 약어도 넣어줄 수 있다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <table>
+                            <caption>표제목</caption>
+                            <colgroup>
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" scope="col">전체구분</th>
+                                    <th id="total" colspan="3" scope="colgroup">구분</th>
+                                </tr>
+                                <tr>
+                                    <th id="total1" scope="col">구분1-1</th>
+                                    <th id="total2" scope="col">구분1-2</th>
+                                    <th id="total3" scope="col">구분1-3</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th id="sum" scope="row">합계</th>
+                                    <td headers="sum total total1">1</td>
+                                    <td headers="sum total total2">2</td>
+                                    <td headers="sum total total3">3</td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <th abbr="A" scope="row">구분A</th>
+                                    <td>1-1-A 내용</td>
+                                    <td>1-2-A 내용</td>
+                                    <td>1-3-A 내용</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">구분B</th>
+                                    <td>1-1-B 내용</td>
+                                    <td>1-2-B 내용</td>
+                                    <td>1-3-B 내용</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">구분C</th>
+                                    <td>1-1-C 내용</td>
+                                    <td>1-2-C 내용</td>
+                                    <td>1-3-C 내용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <table>
+                                <caption>표제목</caption>
+                                <colgroup>
+                                    <col style="width:25%;">
+                                    <col style="width:25%;">
+                                    <col style="width:25%;">
+                                    <col style="width:25%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" scope="col">전체구분</th>
+                                        <th id="total" colspan="3" scope="colgroup">구분</th>
+                                    </tr>
+                                    <tr>
+                                        <th id="total1" scope="col">구분1-1</th>
+                                        <th id="total2" scope="col">구분1-2</th>
+                                        <th id="total3" scope="col">구분1-3</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th id="sum" scope="row">합계</th>
+                                        <td headers="sum total total1">1</td>
+                                        <td headers="sum total total2">2</td>
+                                        <td headers="sum total total3">3</td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <th abbr="A" scope="row">구분A</th>
+                                        <td>1-1-A 내용</td>
+                                        <td>1-2-A 내용</td>
+                                        <td>1-3-A 내용</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">구분B</th>
+                                        <td>1-1-B 내용</td>
+                                        <td>1-2-B 내용</td>
+                                        <td>1-3-B 내용</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">구분C</th>
+                                        <td>1-1-C 내용</td>
+                                        <td>1-2-C 내용</td>
+                                        <td>1-3-C 내용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </dd>
+            <dt id="FORM">Form 태그</dt>
+            <dd>
+                <p class="dot">비슷한 형태의 사용자 입력폼은 &lt;fieldset&gt; 요소를 이용해 구분 </p>
+                <p class="dot">&lt;fieldset&gt;안에는 제목역할을 하는 &lt;legend&gt;를 명시해야 함</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <form action="#" method="post">
+                            <fieldset>
+                                <legend>제목</legend>
+                                <p>내용</p>
+                            </fieldset>
+                            <fieldset>
+                                <legend>제목</legend>
+                                <p>내용</p>   
+                            </fieldset>
+                            <fieldset>
+                                <legend>제목</legend>
+                                <p>내용</p>
+                            </fieldset>
+                        </form>
+                    </pre>
+                </div>
+            </dd>
+            <dt id="INPUT">input 태그</dt>
+            <dd>
+                <p class="dot"> &lt;input&gt;태그,&lt;textarea&gt;태그에는 title속성을 이용하여 역할이나 내용을 입력한다.</p>
+                <p class="dot">type="image" 인 경우 alt값과 title 값을 넣어준다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <input type="text" title="내용입력" placeholder="input">
+                        <textarea name="text" id="text" cols="30" rows="10" placeholder="textarea" title="내용입력"></textarea>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <input type="text" title="내용입력" placeholder="input"><br/>
+                        <textarea name="text" id="text" cols="20" rows="5" placeholder="textarea" title="내용입력"></textarea>
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot"> &lt;label&gt;태그를 같이 쓸 경우 &lt;input&gt;태그에 id값을 지정하여 &lt;label&gt;태그의 for속성을 이용하여 연동 시켜준다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <label for="user_name">이름</label>
+                        <input type="text" id="user_name" />
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <label for="user_name">이름</label>
+                        <input type="text" id="user_name" />
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot"> &lt;label&gt; 들어갈 공간이 협소할때 &lt;title&gt;로 제공하여도 접근성에 위배되지 않는다. </p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                       <label for="numbers_01">주민등록번호</label>
+                       <input type="text" id="numbers_01" name="numbers_01" maxlength="6" title="주민번호 앞자리 입력"> - 
+                       <input type="password" id="numbers_02" name="numbers_01" maxlength="7" title="주민번호 뒷자리 입력">  
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <label for="numbers_01">주민등록번호</label>
+                       <input type="text" id="numbers_01" name="numbers_01" maxlength="6" title="주민번호 앞자리 입력"> - 
+                       <input type="password" id="numbers_02" name="numbers_01" maxlength="7" title="주민번호 뒷자리 입력">  
+                    </div>
+                </div>
+            </dd>
+            <dt id="SELECT">select 태그</dt>
+            <dd>
+                <p class="dot">title 속성을 넣어 역할을 할 수 있게 한다. </p>
+                <p class="dot">&lt;select&gt; 태그를 이용하여 새 창을 띄울 경우(예:패밀리사이트 등) 선택시 바로 띄우지 않고 버튼 클릭시 이동하게 해야한다.</p>
+                <p class="dot">&lt;a&gt;,&lt;title&gt; 태그를 사용하여 새 창을 띄울 경우, title 속상에 새 창으로 열림을 명시한다. &lt;a&gt;태그가 &lt;img&gt; 를 포함할 경우 &lt;img&gt; 태그 alt 값에 "새창"을 포함시킬 수도 있다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                       <select name="familySite" id="familySite"  title="이동할 패밀리사이트를 선택하세요.">
+                           <option>FAMILY SITE</option>
+                           <option value="http://www.naver.com">NAVER</option>
+                           <option value="http://www.daum.net">DAUM</option>
+                           <option value="http://www.google.com">GOOGLE</option>
+                       </select>
+                       <input type="button" value="이동" class="btn_fam_site">
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <select name="not_familySite" id="not_familySite" title="이동할 패밀리사이트를 선택하세요.">
+                           <option>FAMILY SITE</option>
+                           <option value="http://www.naver.com">NAVER</option>
+                           <option value="http://www.daum.net">DAUM</option>
+                           <option value="http://www.google.com">GOOGLE</option>
+                       </select> 
+                       <span class="red">바르지 못한 예</span><br>
+                        <select name="familySite" id="familySite" title="이동할 패밀리사이트를 선택하세요.">
+                           <option>FAMILY SITE</option>
+                           <option value="http://www.naver.com">NAVER</option>
+                           <option value="http://www.daum.net">DAUM</option>
+                           <option value="http://www.google.com">GOOGLE</option>
+                       </select>
+                       <input type="button" value="이동" class="btn_fam_site">
+                       <span class="red">바른 예</span>
+                    </div>
+                </div>
+            </dd>
+            <dt id="color">칼라구분</dt>
+            <dd>
+                <p class="dot">모든 정보는 특정한 색을 구별할 수 없는 사용자나 흑백디스플레이 사용자, 흑백인쇄물을 보는 사용자가 해당 콘텐츠를 인식 할 수 있도록 제공되어야한다.</p>
+                <p class="dot">웹 페이지가 제공하는 텍스트 콘텐츠(텍스트 및 텍스트 이미지)와 배경간의 명도 대비는 <em class="underline">4.5:1</em> 이상이어야 한다.</p>
+                <p class="dot">화면 확대가 가능하도록 구련한 콘텐츠(텍스트 및 텍스트이미지)의 명도대비는 <em class="underline">3:1</em>을 만족해야한다.</p>
+                <div class="cmt">
+                    <em class="box">명도대비 체크툴 : Colour_Contrast_Analyser 다운받기</em><a href="http://www.visionaustralia.org/docs/default-source/businesses-and-professional/cca.zip" target="_blank"> Colour_Contrast_Analyser </a>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/color_tool.png" alt="명도대비체크툴">
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot">페이지 내비게이션 및 선택된 메뉴의 현재 페이지를 색상의 변화만으로 알리면 안된다. 기울임, 밑줄, 괄호, 테두리 등을 추가하여야 한다. (명도가 차이나더라도 오류임)</p>
+                <div class="exam">
+                    <div class="img">
+                        <p><span class="red">바르지 못한 예</span>
+                            <img src="imgs/page.png" alt="페이지 오류 예시">
+                        </p>
+                        <p><span class="red">바른 예</span>
+                        <img src="imgs/goodpage.png" alt="페이지 바른 예시"></p>
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot">회원가입 필수 항목을 색으로만 지정하면 안된다. * 표시로 구분될 수 있게 해야한다.</p>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/red_text.png" alt="컬러로 구분된 필수 항목 잘못된 예시">
+                    </div>
+                </div>
+            </dd>
+            <dt id="video">동영상</dt>
+            <dd>
+                <p class="dot">영상,음성 콘텐츠에 자막, 원고, 수화중 하나이상의 대체 수단을 제공하여야 한다. - 청각 장애인을 위함</p>
+                <p class="dot">텍스트만 제공하는 영상 콘텐츠는 동일한 내용의 음성을 제공하여야 한다. - 시각 장애인을 위함 </p>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/videotext.png" alt="자막이 있는 동영상 예제 이미지">
+                    </div>
+                </div>
+            </dd>
+            <dt id="autoplay">자동재생</dt>
+            <dd>
+                <p class="dot">자동으로 소리가 재생되지 않아야 한다.</p>
+                <p class="dot">자동 재생음을 허용하는 경우 : 자동으로 재생되는 소리는 3초내로 멈추거나 지정된 키(예:esc키)를 누르면 재생을 멈추도록 구현한다.</p>
+                <p class="dot">사용자 요구에 의한 재생 : 콘텐츠에 포함된 멀티미디어 파일은 정지 상태로 제공하며 사용자가 요구할 경우에만 재생 할 수 있도록 제어판(멈춤,일시정지,음량조절 등)을 제공한다.</p>
+                <div class="exam">
+                    <div class="img">
+                        <iframe width="300" height="200" src="https://www.youtube.com/embed/d9IxdwEFk1c" frameborder="0" allowfullscreen title="아이유 팔레트 뮤직비디오"></iframe>
+                        <p class="figcaption">초기화면 멈춤세팅 / 지정된 키 (space바) 로 멈춤 기능 / 프레임 내 제어판 탑재</p>
+                    </div>
+                </div>
+            </dd>
+            <dt id="twinkle">광과민성발작 예방</dt>
+            <dd>
+                <p class="dot">깜빡이거나 번쩍이는 콘텐츠로 인해 발작을 일으키지 않도록 초당 3-50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야한다. 10인치 이상의 스크린을 채용하고 있는 정보 통신 기기에서는 콘텐츠에 의한 광과민성 발작가능성을 특히 주의해야 한다.</p>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/twinkle.gif" width="200px" alt="광과민성 발작 예시 별이미지 ">
+                    </div>
+                </div>
+            </dd>
+            <dt id="whitespace">콘텐츠 간 여백 및 구분</dt>
+            <dd>
+                <p class="dot">콘텐츠에 포함된 모든 컨트롤은 대각선 방향의 길이를 <strong>6.0 mm</strong> 이상으로 제공하는 것이 바람직하다. 링크, 사용자 입력 및 기타 컨트롤은 테두리 안쪽으로 1px 이상의 여백을 두고 이곳에서는 위치 지정 도구의 조작에 반응하지 않도록 구현하는 것이 바람직하다.</p>
+                <p class="dot">이로써, 손 떨림이 있는 사용자와 시각장애인도 컨트롤을 용이하게 찾아서 조절 할 수 있다.</p>
+                <p class="dot">이웃한 콘텐츠는 구별 될 수 있어야 한다. (테두리, 구분선, 다른 무늬, 명도or채도 달리함, 간격조절 등.)</p>
+                <div class="exam">
+                    <div class="img">
+                        <p>
+                            <img src="imgs/n_white.png" alt="6mm미만의 버튼">
+                            <span class="red">여백이 6mm 미만의 버튼(X)</span>
+                        </p>
+                        <p>
+                            <img src="imgs/white.png" alt="6mm이상의 버튼">
+                            <span class="red">여백이 6mm 이상의 버튼(O)</span>
+                        </p>
+                        <br>
+                        <p><strong><a href="#">회사소개</a>  |  <a href="#">광고안내</a> | <a href="#"> 검색등록</a>  |  <a href="#">제휴문의</a> |  <a href="#">인재채용</a></strong></p>
+                    </div>
+                </div>
+            </dd>
+            <dt id="wax">평가도구</dt>
+            <dd>
+                <p class="dot"><strong>Open-WAX</strong> (브라우저 플러그인 방식 / 1페이지씩 검사 / 16개 항목검사 / 설치방법 : 크롬 브라우저 확장프로그램에서 "openwax"검색)</p>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/openwax.png" alt="openwax 이미지">
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot"><strong>WAVE</strong> (서비스 페이지 및 브라우저 플러그인 방식제공 / 1 페이지씩 검사 / 검사결과를 요청한 페이지 위에 직관적인 형태로 표시 / 설치방법 : 크롬 브라우저 확장프록램에서 "WAVE" 검색</p>
+                <div class="exam">
+                    <div class="img">
+                         <img src="imgs/wave.jpg" alt="WAVE 이미지">
+                     </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot"><strong>Achecker</strong> (서비스 페이지 제공 / URL,HTML파일,HTML 마크업 평가지원 / 옵션을 제공하여 접근성 준수 수준(LEVEL)들을 지정하여 평가 / 설치방법 : URL - http://achecker.ca/checker / 접속)</p>
+                <div class="exam">
+                    <div class="img">
+                         <img src="imgs/achecker.png" alt="Achecker 이미지">
+                     </div>
+                </div>
+            </dd>
+        </dl>
+        <span class="sign">last update 2017-05-19 <br>by CNTT publisher</span>
+    </div>
+    <button type="button" class="goTop" >TOP</button>
+</div>
+<script>
+    $(document).ready(function() {
+        /*맨 위로가기 버튼*/
+        $('.goTop').on('click', function() {
+            $('html, body').animate({scrollTop:0}, 200);
+        });
+
+        /*select 바르지못한예*/
+        var not_familySite = $("#not_familySite");
+        not_familySite.on("click",function(){
+           if(not_familySite.val() != "FAMILY SITE"){
+            window.open(not_familySite.val())
+            not_familySite.val("FAMILY SITE")
+           }
+        })
+        /*select 바른예*/
+        var btn_fam_site = $(".btn_fam_site");
+        btn_fam_site.on("click",function(){
+            var fam_site = $("#familySite");
+            window.open(fam_site.val())
+        })
+        var sr = 30;
+        if(sr > 30){console.log(ToBoolean())}
+
+    });
+</script>
+</body>
+</html>

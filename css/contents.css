@@ -1,0 +1,166 @@
+@charset "utf-8";
+@font-face { font-family:'NanumGothicExtraBoldWeb'; font-style:normal; font-weight:normal; src: url('../fonts/NanumGothicExtraBoldCompact.eot'); src: local('☺'), url('../fonts/NanumGothicExtraBoldCompact.woff') format('woff');}
+@font-face { font-family:'NanumGothicBoldCompact'; font-style:normal; font-weight:normal; src: url('../fonts/NanumGothicBoldCompact.eot'); src: local('☺'), url('../fonts/NanumGothicBoldCompact.woff') format('woff');}
+@font-face { font-family:'NanumGothicBold'; font-style:normal; font-weight:normal; src: url('../fonts/NanumGothicBold.woff') format('woff');}
+@font-face { font-family:'NanumGothic'; font-style:normal; font-weight:normal; src: url('../fonts/NanumGothicCompact.eot'); src: local('☺'), url('../fonts/NanumGothic.woff') format('woff');}
+
+#wrap #contents { padding:0px 20px; width: 780px; float: left; background:#fff; margin-left:180px; position:relative; padding-top:55px; padding-bottom:50px; min-height:500px;}
+#wrap #contents p.status_bar { padding:10px; text-align:right; border-bottom:1px solid #d9d9d9; position:absolute; top:0px; right:0px; width:97.5%;}
+#wrap #contents h4{ font-size:32px; font-family:'NanumGothicBoldCompact'; color:#003355;}
+#wrap #contents h5 { padding-left:20px; background:url(../images/sub/sub_img.gif) no-repeat 0px center; color:#003355; font-size:18px; font-weight:bold;}
+#wrap #contents h6 { padding-left:15px; background:url(../images/sub/sub_img2.gif) no-repeat 0px center; color:#444; font-size:15px; font-weight:bold; margin-left:20px; margin-top:10px;}
+#wrap #contents ul.depth_3 li { padding-left:13px; background:url(../images/sub/sub_img3.gif) no-repeat 0px 6px; }
+#wrap #contents p.depth_3 { padding-left:13px; background:url(../images/sub/sub_img3.gif) no-repeat 0px 6px; margin-left:20px; margin-top:10px;}
+
+/* 탭메뉴 정의 1 */
+#wrap #contents .tabmenu { width:100%; overflow:hidden;}
+#wrap #contents .tabmenu>ul { background:url(../images/sub/tabmenu_bg.gif) repeat-x 0px 38px; overflow:hidden; position:relative; height:150px;}
+#wrap #contents .tabmenu>ul>li { float:left;  margin-right:3px;}
+#wrap #contents .tabmenu ul li h5 { padding:0px; background:none;}
+#wrap #contents .tabmenu ul li h5 a {font-weight:bold; display:inline-block; font-size:14px; color:#3591b6; padding:8px 20px;}
+#wrap #contents .tabmenu ul li h5 a:hover { background:#f0f0f0;  }
+#wrap #contents .tabmenu ul li.on { border:1px solid #d9d9d9; border-bottom:1px solid #fff; color:#444444;}
+#wrap #contents .tabmenu ul li.on:hover { background:none;}
+#wrap #contents .tabmenu ul li .sub_tab { display:none; position:absolute; top:55px; left:0px; width:100%;}
+#wrap #contents .tabmenu ul li.on .sub_tab { display:block;}
+#wrap #contents .tabmenu ul li .sub_tab h6{color:#003355; font-size:15px; border-bottom:1px dashed #d9d9d9; padding-bottom:8px; margin-bottom:8px}
+
+/* 검색박스 정의 1 */
+#wrap #contents .search_box { padding:15px 10px; background:#f0f0f0; overflow:hidden; font-size:13px; color:#444444; font-weight:bold; padding-left: 20px; position:relative; margin-top:10px;}
+#wrap #contents .search_box div { margin-top:2px;display:inline-block;}
+#wrap #contents .search_box div img { height:25px;}
+#wrap #contents .search_box div.last { margin:0px; float:right;}
+#wrap #contents .search_box div p.line { border:1px solid #ccc; display:inline-block; padding:4px;}
+#wrap #contents .search_box div p.line input { margin-top:-4px;}
+#wrap #contents .search_box .mobile_calendar { display:none;}
+#wrap #contents .moblie_list { display:none;}
+
+/* 페이징 */
+#wrap #contents .page { float:left; margin-top:20px;}
+#wrap #contents .page a { display:inline-block; width: 20px; height:20px; text-align:center; line-height:20px; border:1px solid #d9d9d9; padding:2px;}
+#wrap #contents .page span { display:inline-block; width:20px; height:20px; text-align:center; line-height:20px; border:1px solid #d9d9d9; background:#2288bb; color:#fff; font-weight:bold; padding:2px;}
+#wrap #contents .page2 { margin-top:20px; text-align:center;}
+#wrap #contents .page2 a { display:inline-block; width: 20px; height:20px; text-align:center; line-height:20px; border:1px solid #d9d9d9; padding:2px;}
+#wrap #contents .page2 span { display:inline-block; width:20px; height:20px; text-align:center; line-height:20px; border:1px solid #d9d9d9; background:#2288bb; color:#fff; font-weight:bold; padding:2px;}
+
+/* 테이블 정의 1 - 리스트형 */
+#wrap #contents .table_list { margin-top:20px; overflow:hidden;}
+#wrap #contents .table_list h5 { padding-left:20px; background:url(../images/sub/sub_img.gif) no-repeat 0px center; color:#003355; font-size:18px; font-weight:bold;}
+#wrap #contents .table_list h6 { padding-left:15px; background:url(../images/sub/sub_img2.gif) no-repeat 0px center; color:#444; font-size:15px; font-weight:bold; margin-left:20px; margin-top:10px;}
+#wrap #contents .table_list table { margin-top:10px;}
+#wrap #contents .table_list table th { padding:10px; border-top:2px solid #d9d9d9; border-bottom:2px solid #d9d9d9; }
+#wrap #contents .table_list table td {padding:5px; text-align:center; border-bottom:1px solid #d9d9d9;}
+#wrap #contents .table_list table tr.even td { background:#e9f0f5;}
+#wrap #contents .table_list p.btn { float:right;margin-top:20px;}
+#wrap #contents .table_list p.btn a { background:url(../images/sub/btn_bg.gif) repeat-x; display:inline-block; height:23px; line-height: 23px; padding:0px 20px; color:#fff; font-weight:bold;}
+
+/* 테이블 정의 2 - 쓰기형(가로) */
+#wrap #contents .table_write { margin-top:20px; position:relative;}
+#wrap #contents .table_write h5 { padding-left:20px; background:url(../images/sub/sub_img.gif) no-repeat 0px center; color:#003355; font-size:18px; font-weight:bold;}
+#wrap #contents .table_write h6 { padding-left:15px; background:url(../images/sub/sub_img2.gif) no-repeat 0px center; color:#444; font-size:15px; font-weight:bold; margin-left:20px; margin-top:10px;}
+#wrap #contents .table_write table { margin-top:10px;}
+#wrap #contents .table_write table th { padding:5px; border:1px solid #d9d9d9; border-right:2px solid #d9d9d9; background:#f8f8f8;}
+#wrap #contents .table_write table td {padding:5px; padding-left:25px; text-align:left; border:1px solid #d9d9d9; border-left:0px;}
+#wrap #contents .table_write table tr.even td { background:#e9f0f5;}
+
+/* 테이블 정의 3 - 읽기형(세로) */
+#wrap #contents .table_view { margin-top:20px; position:relative;}
+#wrap #contents .table_view h5 { padding-left:20px; background:url(../images/sub/sub_img.gif) no-repeat 0px center; color:#003355; font-size:18px; font-weight:bold;}
+#wrap #contents .table_view h6 { padding-left:15px; background:url(../images/sub/sub_img2.gif) no-repeat 0px center; color:#444; font-size:15px; font-weight:bold; margin-left:20px; margin-top:10px;}
+#wrap #contents .table_view table { margin-top:10px;}
+#wrap #contents .table_view table th { padding:5px; border:1px solid #d9d9d9; background:#f8f8f8; border-top:2px solid #d9d9d9;}
+#wrap #contents .table_view table td {padding:5px; text-align:center; border:1px solid #d9d9d9;}
+#wrap #contents .table_view table tr.even td { background:#e9f0f5;}
+
+/* pool관리 */
+#wrap #contents div.school { display:none;}
+#wrap #contents div.college {display:none;}
+#wrap #contents .btn_college {display:none;}
+
+#wrap #contents .img_box { position:absolute; top:30px; left:0px; width:30%; text-align: center;}
+#wrap #contents .img_box .img { border:1px solid #D9D9D9; height:200px; margin-bottom:20px;}
+
+#wrap #contents .exam { display:none;}
+#wrap #contents .submajor { display:none;}
+
+#wrap #contents .kind_list { overflow:hidden; padding:10px 0px; border-bottom: 2px solid #D9D9D9; border-top: 2px solid #D9D9D9; margin-top:20px;}
+#wrap #contents .kind_list li { float:left; width:25%;}
+#wrap #contents .kind_list li label { width:100px; display:inline-block;}
+#wrap #contents .kind_box { display:none;}
+
+/* 운영관리 */
+#wrap #contents span.box { display:inline-block; padding:5px; margin-left:10px; border:1px solid #ccc;}
+#wrap #contents .selected {border:1px solid #ccc; margin-top:20px;}
+#wrap #contents .selected h6 { margin-left:10px;}
+#wrap #contents .selected ul { margin:10px 10px 20px; overflow:hidden;}
+#wrap #contents .selected ul li { float:left; margin:0px 10px;}
+
+/* 헬프데스크 */
+#wrap #contents .kategorie { border:1px solid #ccc; margin-top:10px; overflow:hidden; padding-bottom:10px;}
+#wrap #contents .kategorie>ul>li { float:left; width:30%;}
+#wrap #contents .kategorie>ul>li ul li { margin-left:30px; padding-left:10px; background:url(../images/sub/sub_img3.gif) no-repeat 0px 7px;}
+
+#wrap #contents tr.none {display: table-row;}
+#wrap #contents tr.none>td { display:none;}
+#wrap #contents tr.none div { display:none; width:100%;}
+
+#wrap #contents div.comment { border:1px solid #ccc; margin-top:10px; padding:10px;}
+#wrap #contents div.comment ul li { padding:8px;}
+#wrap #contents div.comment ul li + li { border-top:1px solid #ccc;}
+#wrap #contents div.comment ul li p { float:left; width:100px;}
+#wrap #contents div.comment ul li a { margin-top:-4px;}
+#wrap #contents div.comment .comment_write { border-top:1px solid #ccc; height:80px;}
+#wrap #contents div.comment .comment_write p {float:left; width:100px; line-height:80px; font-weight: bold;}
+#wrap #contents div.comment .comment_write textarea { width:550px; height:70px; margin-top:5px;}
+#wrap #contents div.comment .comment_write a { margin-bottom:15px;}
+
+/* 캘린더 */
+#wrap #contents .pc_calendar img { vertical-align: middle;}
+
+/* 팝업 */
+#wrap #contents .popup_half { width:50%; float: left; height:320px;}
+#wrap #contents .popup_half p { margin-top:5px;}
+#wrap #contents .popup_half p.depth_3 { padding-left:10px; background:url(../images/sub/sub_img3.gif) no-repeat 0px 7px;}
+#wrap #contents .popup_box { border-top:1px solid #ccc; clear:both;}
+#wrap #contents .popup_box div { width:30%; float:left; margin:20px 9.5%; border:1px solid #ccc;}
+#wrap #contents .popup_box div p { padding:5px; border-bottom:1px solid #ccc;}
+#wrap #contents .popup_box div ul { height:100px; overflow-y:scroll; padding:5px;}
+#wrap #contents .popup_box div ul li { cursor:pointer;}
+#wrap #contents .popup_box div ul li:hover,#wrap #contents .popup_box div ul li.selected { background:#ccc; color:#fff;}
+#wrap #contents .popup_box p.depth_3 { padding-left:10px; background:url(../images/sub/sub_img3.gif) no-repeat 0px 7px;}
+#wrap #contents .popup_box div.list_box { float:none; margin:20px 0px; width:500px;}
+
+
+/* 탭메뉴 - 일단 기본 샘플 (폼관련 때문에) */
+#wrap #contents .tabmenu2 { width:100%; overflow:hidden; margin-bottom:20px;}
+#wrap #contents .tabmenu2>ul { background:url(../images/sub/tabmenu_bg.gif) repeat-x 0px 38px; overflow:hidden; position:relative;}
+#wrap #contents .tabmenu2>ul>li { float:left;  margin-right:3px;}
+#wrap #contents .tabmenu2 ul li h5 { padding:0px; background:none;}
+#wrap #contents .tabmenu2 ul li h5 a {font-weight:bold; display:inline-block; font-size:14px; color:#3591b6; padding:8px 20px;}
+#wrap #contents .tabmenu2 ul li h5 a:hover { background:#f0f0f0;  }
+#wrap #contents .tabmenu2 ul li.on { border:1px solid #d9d9d9; border-bottom:1px solid #fff; color:#444444;}
+#wrap #contents .tabmenu2 ul li.on:hover { background:none;}
+
+#wrap #contents .sample { overflow:hidden;}
+#wrap #contents .sample li { margin:5px 0px;}
+#wrap #contents .sample_box { padding:10px; border:1px solid #2d2d2d; margin-bottom:20px; display:none;}
+
+
+/* 모바일 모드 시작 */
+#wrap.res569 #container #contents {margin-left:0px; width:98% !important; min-width:320px; padding:8px;}
+#wrap.res569 #container #contents p.status_bar { height:40px;}
+#wrap.res569 #container #contents .search_box { overflow:inherit; height:30px;}
+#wrap.res569 #container #contents .search_box .pc_calendar { display:none;}
+#wrap.res569 #container #contents .search_box div.last { text-align:right; width:90%;}
+#wrap.res569 #container #contents .search_box div.last input[type=text] { width:40%;}
+#wrap.res569 #container #contents .search_box div.last select { width:25%;}
+#wrap.res569 #container #contents .moblie_list { float:left; margin-top:6px; display:block;}
+#wrap.res569 #container #contents .mobile_calendar { display:block;}
+#wrap.res569 #container #contents .search_box>form>div:first-child { position:absolute; top:60px; left:0px; background:#d9d9d9; width:100%; z-index:3; display:none;}
+#wrap.res569 #container #contents .search_box>form>div:first-child input,
+#wrap.res569 #container #contents .search_box>form>div:first-child select { width:100%; margin:3px 0px;}
+
+
+#wrap.res569 #contents .table_list div {overflow-x: scroll; padding:5px; border:1px solid #ccc;}
+#wrap.res569 #contents .table_list div div { overflow-x:inherit;}
+#wrap.res569 #contents .table_list div table { width:1000px;}

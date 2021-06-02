@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Web Accessibility</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
+
+
+
+<script type="text/javascript" src="scripts/shCore.js"></script>
+<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="css/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="css/shThemeDefault.css"/>
+<script type="text/javascript">
+    SyntaxHighlighter.all();
+</script>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    TweenMax.to("h1",2,{y:300,ease:Bounce.easeOut});
+})
+</script>
+</head>
+<body>
+
+<div class="container">
+    <div class="navWrap">
+        <h1>웹접근성 <span>(web accessibility)</span></h1>
+        <ul class="nav" id="nav">
+            <li><a href="#img">img태그</a></li>
+            <li><a href="#IR">IR기법</a></li>
+            <li><a href="#TITLE">title태그</a></li>
+            <li><a href="#SKIP">Skip Navigation 제공</a></li>
+            <li><a href="#TABLE">table 태그</a></li>
+            <li><a href="#FORM">form 태그</a></li>
+            <li><a href="#INPUT">input 태그</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <dl class="list">
+            <dt id="img">img태그</dt>
+            <dd>
+                <p class="dot">img태그가 들어가면 그 의미에 맞는 alt값을 넣어준다</p>
+                <div class="cmt">
+                    <em class="box">IR기법(Image Replacement)</em> - <strong>이미지 대체기법</strong> IR기법으로 대체할수 있다.
+                </div>
+				
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <img src="http://www.cntt.co.kr/renewal/resources/images/main/img_banner_m_161018.jpg" alt="전화성의 어드벤처 8기 모집 2016 엑셀러레이터 연계지원사업 (충청권)"> <!-- 이미지에 들어가있는 글자삽입 -->
+                    </pre>
+                </div>
+				<div class="exam">
+					<div class="img">
+						<img src="http://www.cntt.co.kr/renewal/resources/images/main/img_banner_m_161018.jpg" alt="전화성의 어드벤처 8기 모집 2016 엑셀러레이터 연계지원사업 (충청권)" width="320">
+					</div>
+				</div>
+            </dd>
+			<dt id="IR">IR기법</dt>
+            <dd>
+                <p class="dot">배경 이미지의 의미가 사용자에게 전달되어야 하는 콘텐츠는 그 의미가 보조 기술로 전달되도록 대체 텍스트를 제공해야 한다. </p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <p><a href="#" class="btn_facebook">페이스북으로 이동</a></p>
+                    </pre>
+				</div>
+				<div class="exam">
+					<pre class="brush: css;">
+						/* bg 로 이미지 삽입*/
+                        .btn_facebook{display:inlnie-block;width:20px;height:20px;text-indent:-999em;font-size:0;backgroung:url(/images/btn_facebook.png) no-repeat;}
+                    </pre>
+                </div>
+            </dd>
+            <dt id="TITLE">title 태그</dt>
+            <dd>
+                <p class="dot">페이지에 제목이라 할 수 있는 &lt;title&gt;태그에는 간략하게 페이지 별로 페이지의 대한 정보(제목)만을 입력한다.</p>
+                <p class="dot">무의미한 기호나 텍스트는 넣지 않는다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <title>공지사항 :: 씨엔티테크</title>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/title.png" alt="타이틀 예제 이미지">
+                    </div>
+                </div>
+            </dd>
+            <dt id="SKIP">Skip Navigation 제공</dt>
+            <dd>
+                <p class="dot">장애인을 위해 리더기가 내용을 건너 뛸 수 있게 skip navigation을 제공한다.</p>
+                <p class="dot">skip navigation은 장애인을 위한 내용이기에 화면상에 보이지 않게 처리해도 무방하다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <ul class="skip_navi">
+                            <li><a href="#gnb">상위메뉴</a></li>
+                            <li><a href="#lnb">하위메뉴</a></li>
+                            <li><a href="#contents">본문</a></li>
+                            <li><a href="#footer">회사정보</a></li>
+                            <li><a href="#quick">퀵메뉴</a></li>
+                        </ul>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <pre class="brush: css;">
+                        /* 화면상에 안보이게 처리 후 focus로 이동 가능하게 한다.*/
+                        .skip_navi {position: relative;}
+                        .skip_navi a {color: #fff;display: block;position: absolute;top:-50px; left:0;width: 200px;height:20px;background: #000;text-align: center;}
+                        .skip_navi a:focus {top:0;}
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <img src="imgs/skip_1.png" alt="스킵메뉴 상위">
+                        <img src="imgs/skip_2.png" alt="스킵메뉴 하위">
+                        <img src="imgs/skip_3.png" alt="스킵메뉴 본문">
+                        <img src="imgs/skip_4.png" alt="스킵메뉴 회사정보">
+                        <img src="imgs/skip_5.png" alt="스킵메뉴 퀵메뉴">
+                    </div>
+                    <p class="figcaption">초기화면에서 focus 이동시 차례로 노출된다.</p>
+                </div>
+            </dd>
+            <dt id="TABLE">table 태그</dt>
+            <dd>
+                <p class="dot">Table 태그에는 &lt;summary&gt; 속성 (테이블을 간단히 요약한 내용) 값을 넣어준다.</p>
+                <p class="dot"> Table 태그 안에는 &lt;caption&gt;태그를 넣어 테이블의 제목값을 넣어준다.</p>
+                <p class="dot"> &lt;thead&gt;나 &lt;tbody&gt;로 나눠서 의미에 맞게 사용하고 &lt;tfoot&gt;은 바닥글이 있을때만 사용한다. 테이블이 길 경우 리더기가 얼마나 오래 읽어야 할지 모르는 불편함을 덜기 위해 작성순서를 <span class="underline">thead – tfoot – tboody</span> 순으로 한다</p>
+                <p class="dot"> &lt;th&gt; 에는 &lt;scope&gt; 속성을 넣거나 id 값을 지정하여 &lt;td&gt;에 &lt;headers&gt; 속성으로 연결한다.</p>
+                <p class="dot"> &lt;th&gt;에 &lt;abbr&gt;속성을 이용하여 약어도 넣어줄 수 있다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <table summary='테이블에 대한 내용 세부 설명'>
+                            <caption>표제목</caption>
+                            <colgroup>
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" scope="col">전체구분</th>
+                                    <th id="total" colspan="3" scope="colgroup">구분</th>
+                                </tr>
+                                <tr>
+                                    <th id="total1" scope="col">구분1-1</th>
+                                    <th id="total2" scope="col">구분1-2</th>
+                                    <th id="total3" scope="col">구분1-3</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th id="sum" scope="row">합계</th>
+                                    <td headers="sum total total1">1</td>
+                                    <td headers="sum total total2">2</td>
+                                    <td headers="sum total total3">3</td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <th abbr="A" scope="row">구분A</th>
+                                    <td>1-1-A 내용</td>
+                                    <td>1-2-A 내용</td>
+                                    <td>1-3-A 내용</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">구분B</th>
+                                    <td>1-1-B 내용</td>
+                                    <td>1-2-B 내용</td>
+                                    <td>1-3-B 내용</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">구분C</th>
+                                    <td>1-1-C 내용</td>
+                                    <td>1-2-C 내용</td>
+                                    <td>1-3-C 내용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <table summary='테이블에 대한 내용 세부 설명'>
+                                <caption>표제목</caption>
+                                <colgroup>
+                                    <col style="width:25%;">
+                                    <col style="width:25%;">
+                                    <col style="width:25%;">
+                                    <col style="width:25%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" scope="col">전체구분</th>
+                                        <th id="total" colspan="3" scope="colgroup">구분</th>
+                                    </tr>
+                                    <tr>
+                                        <th id="total1" scope="col">구분1-1</th>
+                                        <th id="total2" scope="col">구분1-2</th>
+                                        <th id="total3" scope="col">구분1-3</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th id="sum" scope="row">합계</th>
+                                        <td headers="sum total total1">1</td>
+                                        <td headers="sum total total2">2</td>
+                                        <td headers="sum total total3">3</td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <th abbr="A" scope="row">구분A</th>
+                                        <td>1-1-A 내용</td>
+                                        <td>1-2-A 내용</td>
+                                        <td>1-3-A 내용</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">구분B</th>
+                                        <td>1-1-B 내용</td>
+                                        <td>1-2-B 내용</td>
+                                        <td>1-3-B 내용</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">구분C</th>
+                                        <td>1-1-C 내용</td>
+                                        <td>1-2-C 내용</td>
+                                        <td>1-3-C 내용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                    <!-- <div class="img">
+                        <img src="imgs/table.png" alt="테이블 참고이미지">
+                    </div> -->
+                </div>
+            </dd>
+            <dt id="FORM">Form 태그</dt>
+            <dd>
+                <p class="dot">비슷한 형태의 사용자 입력폼은 &lt;fieldset&gt; 요소를 이용해 구분 </p>
+                <p class="dot">&lt;fieldset&gt;안에는 제목역할을 하는 &lt;legend&gt;를 명시해야 함</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <form action="#" method="post">
+                            <fieldset>
+                                <legend>제목</legend>
+                                <p>내용</p>
+                            </fieldset>
+                            <fieldset>
+                                <legend>제목</legend>
+                                <p>내용</p>   
+                            </fieldset>
+                            <fieldset>
+                                <legend>제목</legend>
+                                <p>내용</p>
+                            </fieldset>
+                        </form>
+                    </pre>
+                </div>
+            </dd>
+            <dt id="INPUT">input 태그</dt>
+            <dd>
+                <p class="dot"> &lt;input&gt;태그,&lt;textarea&gt;태그에는 title속성을 이용하여 역할이나 내용을 입력한다.</p>
+                <!-- <p class="dot"> &lt;label&gt;태그를 같이 쓸 경우 &lt;input&gt;태그에 ID값을 지정하여 &lt;label&gt;태그의 for속성을 이용하여 연동 시켜준다.</p> -->
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <input type="text" title="내용입력" placeholder="input">
+                        <textarea name="text" id="text" cols="30" rows="10" alt="내용입력" placeholder="textarea"></textarea>
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <input type="text" title="내용입력" placeholder="input"><br/>
+                        <textarea name="text" id="text" cols="20" rows="5" alt="내용입력" placeholder="textarea"></textarea>
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot"> &lt;label&gt;태그를 같이 쓸 경우 &lt;input&gt;태그에 id값을 지정하여 &lt;label&gt;태그의 for속성을 이용하여 연동 시켜준다.</p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                        <label for="user_name">이름</label>
+                        <input type="text" id="user_name" />
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <label for="user_name">이름</label>
+                        <input type="text" id="user_name" />
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <p class="dot"> &lt;label&gt; 들어갈 공간이 협소할때 &lt;title&gt;로 제공하여도 접근성에 위배되지 않는다. </p>
+                <div class="exam">
+                    <pre class="brush: html;">
+                       <label for="numbers_01">주민등록번호</label>
+                       <input type="text" id="numbers_01" name="numbers_01" maxlength="6" title="주민번호 앞자리 입력"> - 
+                       <input type="password" id="numbers_02" name="numbers_01" maxlength="7" title="주민번호 뒷자리 입력">  
+                    </pre>
+                </div>
+                <div class="exam">
+                    <div class="img">
+                        <label for="numbers_01">주민등록번호</label>
+                       <input type="text" id="numbers_01" name="numbers_01" maxlength="6" title="주민번호 앞자리 입력"> - 
+                       <input type="password" id="numbers_02" name="numbers_01" maxlength="7" title="주민번호 뒷자리 입력">  
+                    </div>
+                </div>
+            </dd>
+        </dl>
+        <span class="sign">last update 2017-05-12 <br>by CNTT publisher</span>
+    </div>
+    <button type="button" class="goTop" >TOP</button>
+</div>
+<script>
+    $(document).ready(function() {
+        // 맨 위로가기 버튼
+        $('.goTop').on('click', function() {
+            $('html, body').animate({scrollTop:0}, 200);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+@charset "utf-8"; /* css의 파일 저장방식 지정 */
+
+html, body {margin:0; padding:0; font:normal 13px/1.4 verdana, 'Malgun Gothic', '맑은고딕', Dotum, sans-serif; color:#333; }
+.container {position:relative; margin:0 auto 6rem; overflow:hidden;}
+.container h1 {padding:1.5rem 2rem 1rem;margin:0; letter-spacing:-0.1rem;}
+.container h1 span{display:block;font-size:0.5em;color:#999;}
+/*.nav {float:left; margin:0 0 0 1rem; padding:0; width:18%; overflow-y:scroll;}*/
+.navWrap {position:fixed;left:0;top:0;bottom:0;width:220px; padding:0; background:rgba(256,256,256,.8); box-sizing:border-box;border-right:1px solid #ededed;overflow:auto;}
+.nav {margin:0; padding:0 0 3rem 0;border-top:1px solid #ededed;}
+.nav li {list-style:none; border-bottom:1px solid #ededed; font-size:0.93rem;}
+.nav li > a {display:block; padding:.5rem 1rem; text-decoration:none; color:#666;}
+.nav li > a:hover {background:#333; color:#fff;}
+.content {padding:0 2rem;margin-left:220px;}
+.list {margin:0;}
+.list > dt {padding:2rem 0 0; font-size:1.2rem; font-weight:bold; color:#39f;}
+.list > dt:first-child {padding-top:5rem;}
+.list > dd {margin:0; padding:0 1rem 2rem; border-bottom:1px solid #ededed; overflow:hidden;}
+.list > dd .dot {position: relative;padding-left: 20px;}
+.list > dd .dot:after{display: block;content:"";width: 2px; height: 2px;background-color: #666;position: absolute;top:8px;left: 8px; }
+.list .cmt, .list .exam {margin:1rem 0; border-radius:0.2rem; font-size:0.93rem; line-height:1.8;}
+.list .cmt {padding:0.5rem 1rem; border:1px dashed #ededed; color:#666;}
+.list .exam {border:1px solid #ccc; color:#666; }
+.list .exam .img{padding:15px;}
+.list .exam .img img{vertical-align:middle;}
+.list .exam .img input[placeholder="input"]{margin-bottom: 15px;padding: 0 5px;border: 1px solid #999;}
+.list .exam .img textarea {padding: 0 5px;border: 1px solid #999}
+.list .exam .img select{background-color: #000; color: #fff; padding: 4px 11px; width: 200px;position: relative;}
+.list .exam .img select[name="not_familySite"]{width: 242px;margin-bottom: 15px;}
+.list .exam .img input[type="button"]{background: none;border: 1px solid #000;}
+.list > dd em {font-style:normal; font-weight:normal;}
+.list > dd .red {color:red;}
+.list > dd .box {display:inline-block; margin:0.2rem 0; padding:0.1rem 0.3rem; background:#f9f9f9; border:1px solid #ededed; border-radius:0.2rem; font-size:0.93rem; color:green;}
+.list > dd .underline {text-decoration:underline;}
+.list > dd .figcaption {text-indent: 30px; color: #666;}
+.list > dd .txt_i91 {text-indent: 91px; display: inline-block; }
+
+.goTop {position:fixed; right:3rem; bottom:3rem; width:4rem; height:4rem; background-color:#333; border:0; border-radius:50%; color:#fff; opacity:.2;}
+.goTop:hover {opacity:1;}
+.sign {display:block; padding:1.5rem 0 0; font-size:0.84rem; color:#ccc;}
+.blind{position: absolute;left: -999px;}
+/*테이블*/
+table,th,td{border: 1px solid #000;text-align: center;}
+th{background-color: lightgrey;}
+th,td{padding: 5px;}
